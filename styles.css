@@ -516,3 +516,50 @@ footer {
     background: var(--primary-color);
     color: var(--background-color);
 }
+
+
+/* Responsive adjustments for small screens */
+@media (max-width: 600px) {
+  /* Adjust hero heading and tagline for mobile */
+  .hero h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .hero h2 {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  /* Section menu: single column */
+  .section-menu {
+    grid-template-columns: 1fr;
+  }
+  .section-card {
+    width: 100%;
+  }
+  /* Tile menu: single column */
+  .tile-menu {
+    grid-template-columns: 1fr;
+  }
+  .tile-menu button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  /* Detail header tile: full width */
+  .detail-header-tile {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  /* Cards container: stack cards */
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+  /* Contact form layout adjustments */
+  .contact-section {
+    flex-direction: column;
+  }
+  .contact-section form {
+    width: 100%;
+    padding: 0;
+  }
+}
