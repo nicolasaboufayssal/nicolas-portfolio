@@ -41,3 +41,13 @@ function showDetail(id) {
         window.scrollTo({ top: offsetTop, behavior: 'smooth' });
     }
 }
+// Auto-scroll to hero heading on subpages for mobile screens
+if (window.innerWidth <= 600) {
+  document.addEventListener('DOMContentLoaded', () => {
+    const internalHero = document.querySelector('.internal-hero');
+    if (internalHero) {
+      const offsetTop = internalHero.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    }
+  });
+}
