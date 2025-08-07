@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional&nbsp;Experience – Nicolas&nbsp;Abou&nbsp;Fayssal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav>
+        <div class="logo">Nicolas</div>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <ul id="nav-links">
+            <li><a href="index.html">Portfolio</a></li>
+            <li><a href="about.html">About&nbsp;Me</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Section menu on subpages: display the same category cards used on the landing page -->
+    <div class="section-menu subpage-menu">
+        <a href="education.html" class="section-card" style="background-image:url('images/education-card.png')">
+            <span class="label">Education</span>
+        </a>
+        <a href="experience.html" class="section-card active" style="background-image:url('images/experience-card.png')">
+            <span class="label">Professional<br>Experience</span>
+        </a>
+        <a href="projects.html" class="section-card" style="background-image:url('images/projects-card.png')">
+            <span class="label">Personal<br>Projects</span>
+        </a>
+    </div>
+
+    <section class="hero-section internal-hero">
+        <h1 class="hero-title">Professional&nbsp;Experience</h1>
+    </section>
+
+    <!-- Tile menu listing each professional experience -->
+    <div class="tile-menu">
+        <div class="tile" data-target="exp-bnp-hr">BNP&nbsp;HR</div>
+        <div class="tile" data-target="exp-bnp-ats">BNP&nbsp;ATS</div>
+        <div class="tile" data-target="exp-leyton">Leyton</div>
+        <div class="tile" data-target="exp-edf">EDF</div>
+    </div>
+
+    <!-- Details container with narrative descriptions for each role -->
+    <div class="details-container">
+        <section id="exp-bnp-hr" class="detail-section">
+            <h2>BNP&nbsp;Paribas HR&nbsp;IT – IT&nbsp;Project&nbsp;Manager</h2>
+            <p><em>June&nbsp;2024&nbsp;– Present, Paris</em></p>
+            <p>Joining BNP&nbsp;Paribas’s HR IT department, I stepped into an environment where deployments were manual and reporting lived in sprawling spreadsheets. My first mission was to automate the delivery pipeline. I designed and deployed a suite of Shell scripts to orchestrate dev, staging and prod deliveries, then wired them into Jenkins pipelines backed by Ansible and Docker. With continuous integration in place, we could build, test and deploy HR services at the click of a button while monitoring our cloud deployments for stability.</p>
+            <p>The transformation extended beyond infrastructure. I wrote VBA macros and SQL queries to ingest and reshape data, turning labyrinthine Excel files into concise KPI dashboards that leaders could act on. As custodian of our servers I handled ServiceNow tickets, coordinated security patches and ensured compliance. I configured APIGEE APIs with mutual TLS, enabling secure SSO integrations and exposing HR endpoints to partners like Cornerstone, IBM and Coursera. By weaving together automation, analytics and integrations I helped the HR team reclaim their time and focus on people rather than plumbing.</p>
+        </section>
+        <section id="exp-bnp-ats" class="detail-section">
+            <h2>BNP&nbsp;Paribas Recruitment – ATS&nbsp;Migration&nbsp;Lead</h2>
+            <p><em>March&nbsp;2023&nbsp;– June&nbsp;2024, Paris</em></p>
+            <p>Prior to my work in HR IT I led the migration of BNP’s applicant tracking system. The bank was retiring its ageing Oracle platform and rolling out Avature across sixty countries. As migration lead I coordinated the transition without disrupting recruiting activities. I designed automated SFTP and VBA pipelines that transformed and transferred millions of candidate records, built adapters to sync Avature with LinkedIn, APEC and Aeon job boards and managed cutover planning for each country.</p>
+            <p>Data governance was as critical as data flows. I collaborated with legal and cybersecurity teams to define an archiving strategy, implement GDPR‑compliant governance and configure role‑based permissions. Weekly steering committees with global stakeholders helped resolve bugs and negotiate features with vendors. I produced training materials and ran workshops so recruiters could hit the ground running on day one. The result was a unified, modern ATS that boosted recruiter productivity and delivered a smoother candidate experience while keeping data secure and auditable.</p>
+        </section>
+        <section id="exp-leyton" class="detail-section">
+            <h2>Leyton – IT&nbsp;Project&nbsp;Manager</h2>
+            <p><em>January&nbsp;2021&nbsp;– March&nbsp;2023, Paris</em></p>
+            <p>At Leyton, a consultancy specialising in energy saving certificates and energy taxation, I managed three bespoke platforms. My responsibilities spanned business analysis and project management: I conducted studies with internal and external clients, wrote detailed functional requirements and crafted roadmaps that balanced regulatory deadlines with evolving business priorities. Each release required translating complex legislation into actionable user stories that our developers could implement.</p>
+            <p>Over thirty‑five Agile sprints I organised sprint planning, daily stand‑ups and retrospectives. I authored user stories, managed backlogs and performed technical testing to ensure quality before every release. Steering committees brought together operations, legal and IT to prioritise features and align strategy. This experience honed my ability to lead cross‑functional teams, communicate clearly with non‑technical stakeholders and deliver compliant software in a highly regulated sector.</p>
+        </section>
+        <section id="exp-edf" class="detail-section">
+            <h2>EDF&nbsp;R&amp;D – Research&nbsp;Engineer</h2>
+            <p><em>February&nbsp;2020&nbsp;– September&nbsp;2020, Paris</em></p>
+            <p>During my research tenure at EDF’s R&amp;D division I investigated how to smooth the intermittency of renewable energy. I built techno‑economic models that evaluated storing surplus photovoltaic electricity as hydrogen and studied the efficiency of reconverting it back into power when demand spiked. I also researched Power‑to‑Gas pathways, exploring how surplus electricity could be converted into fuels and how electric vehicle charging could be coupled with renewable production.</p>
+            <p>Collaborating with scientists and engineers broadened my understanding of the energy transition. I learned to translate complex research into business cases and policy recommendations and gained insights that continue to inform my work at the intersection of technology and sustainability.</p>
+        </section>
+        <section id="exp-placeholder" class="detail-section active">
+            <h2>Experience Overview</h2>
+            <p>Select a tile above to explore the story behind each chapter of my career.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nicolas&nbsp;Abou&nbsp;Fayssal. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal&nbsp;Projects – Nicolas&nbsp;Abou&nbsp;Fayssal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav>
+        <div class="logo">Nicolas</div>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <ul id="nav-links">
+            <li><a href="index.html">Portfolio</a></li>
+            <li><a href="about.html">About&nbsp;Me</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Section menu on subpages: display the same category cards used on the landing page -->
+    <div class="section-menu subpage-menu">
+        <a href="education.html" class="section-card" style="background-image:url('images/education-card.png')">
+            <span class="label">Education</span>
+        </a>
+        <a href="experience.html" class="section-card" style="background-image:url('images/experience-card.png')">
+            <span class="label">Professional<br>Experience</span>
+        </a>
+        <a href="projects.html" class="section-card active" style="background-image:url('images/projects-card.png')">
+            <span class="label">Personal<br>Projects</span>
+        </a>
+    </div>
+
+    <section class="hero-section internal-hero">
+        <h1 class="hero-title">Personal&nbsp;Projects</h1>
+    </section>
+
+    <!-- Tile menu listing each project -->
+    <div class="tile-menu">
+        <div class="tile" data-target="proj-crypto">Crypto&nbsp;Master</div>
+        <div class="tile" data-target="proj-whatsapp">WhatsApp&nbsp;Bot</div>
+        <div class="tile" data-target="proj-social">Social&nbsp;Media&nbsp;Bot</div>
+        <div class="tile" data-target="proj-gpt">Custom&nbsp;GPT&nbsp;Agents</div>
+    </div>
+
+    <!-- Details container with narrative descriptions for each project -->
+    <div class="details-container">
+        <section id="proj-crypto" class="detail-section">
+            <h2>Crypto&nbsp;Master – A Domain‑Specific Knowledge Engine</h2>
+            <p><em>Python · LangChain · FAISS</em></p>
+            <p>The crypto landscape evolves at breakneck speed, making it difficult to cut through hype and find real insights. To tackle this problem I built Crypto&nbsp;Master, a personalised research assistant that ingests and organises knowledge from dozens of blockchain books. A Python ETL pipeline cleans and normalises each text before generating vector embeddings with FAISS via LangChain. The embeddings are served through a Flask API so that users can ask natural‑language questions and receive context‑aware answers in seconds.</p>
+            <p>Along the way I grappled with everything from inconsistent OCR to tuning embedding dimensions for semantic search. The project sharpened my data engineering skills and showcased how language models and vector databases can turn static books into an interactive knowledge base. Crypto&nbsp;Master continues to be my go‑to tool for staying on top of blockchain developments and inspires ideas for new domain‑specific assistants.</p>
+        </section>
+        <section id="proj-whatsapp" class="detail-section">
+            <h2>WhatsApp&nbsp;Bot – Automating Client Support</h2>
+            <p><em>Node.js · Twilio · MongoDB</em></p>
+            <p>As more clients started contacting us through WhatsApp I saw an opportunity to streamline responses. I designed and built a workflow bot that sits between Twilio’s WhatsApp API and our internal systems. Written in Node.js with a MongoDB backend, the bot uses simple natural‑language classification to understand intent, dispatches personalised replies and escalates complex queries to the right human via our ticketing system.</p>
+            <p>By handling hundreds of messages per day automatically it eliminated repetitive follow‑ups and improved response times. Building it taught me how to design conversational flows, integrate messaging platforms with business processes and balance automation with the need for human empathy.</p>
+        </section>
+        <section id="proj-social" class="detail-section">
+            <h2>Social&nbsp;Media&nbsp;Bot – Content Scheduling on Autopilot</h2>
+            <p><em>Python · Selenium · Cron</em></p>
+            <p>Maintaining a consistent social‑media presence is essential yet time‑consuming. I built a headless Python script using Selenium that logs into TikTok, Instagram and YouTube, uploads media and captions and schedules posts via cron. The bot abstracts away the web interface and runs nightly, queueing up posts for the week ahead without any manual intervention.</p>
+            <p>This automation freed up hours of creative time and taught me the nuances of automating web interactions responsibly—dealing with CAPTCHAs, rotating user agents and respecting platform limits. It demonstrates how a few hundred lines of code can reclaim dozens of hours of repetitive work each month.</p>
+        </section>
+        <section id="proj-gpt" class="detail-section">
+            <h2>Custom&nbsp;GPT&nbsp;Agents – Tailored AI Assistants</h2>
+            <p><em>OpenAI API · Express</em></p>
+            <p>Intrigued by the rise of generative AI, I decided to build my own assistants. Using the OpenAI API and an Express backend I designed a suite of custom GPT agents that connect to our internal ticketing and CI/CD dashboards. Each agent chains prompts together with real‑time context to answer support questions, generate research summaries, draft release notes or help onboard new team members.</p>
+            <p>I deployed five such assistants covering domains from DevOps to HR. They automate repetitive knowledge work and prove that AI can be woven into everyday workflows. Over time they’ve become an indispensable part of my toolkit—accelerating tasks, amplifying creativity and inspiring others to imagine how AI can augment their own roles.</p>
+        </section>
+        <section id="proj-placeholder" class="detail-section active">
+            <h2>Projects Overview</h2>
+            <p>Choose a tile above to discover the story behind each project.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nicolas&nbsp;Abou&nbsp;Fayssal. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

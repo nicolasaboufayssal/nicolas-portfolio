@@ -1,0 +1,518 @@
+/* Root colour variables for quick customisation */
+:root {
+    --primary-color: #00adb5;   /* teal accent for highlights */
+    --secondary-color: #ac7ef4; /* purple accent for secondary highlights */
+    /* A deep midnight blue for the page background */
+    --background-color: #050c1e;
+    /* Card backgrounds are lightly tinted to let the circuit pattern peek through */
+    --card-bg: rgba(255, 255, 255, 0.06);
+    /* Borders are a bit more opaque for better contrast */
+    --card-border: rgba(255, 255, 255, 0.15);
+    --text-color: #f5f5f5;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background: url('images/tech-bg.png') center/cover fixed no-repeat;
+    position: relative;
+}
+
+/* Dark overlay to blend the background image seamlessly */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Dark overlay for better readability; lower opacity shows more of the circuit pattern */
+    background: rgba(10, 15, 36, 0.6);
+    z-index: -1;
+}
+
+/* Navigation bar styles */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: rgba(10, 15, 36, 0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--card-border);
+}
+
+nav .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Highlight active menu item */
+nav ul li a.active {
+    color: var(--primary-color);
+}
+
+nav .menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Hero section */
+/* Generic hero section used on all pages */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Landing hero on portfolio page */
+.portfolio-hero {
+    min-height: 50vh;
+    padding-top: 120px; /* ensures space below fixed nav */
+}
+
+/* Internal hero for about and contact pages */
+.internal-hero {
+    min-height: 40vh;
+    padding-top: 120px;
+}
+
+/* Hero title styling */
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background: var(--primary-color);
+    color: var(--background-color);
+}
+
+/* Tile menu styling */
+.tile-menu {
+    /* Use a responsive grid to lay out tiles evenly like the Webflow demo */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1rem;
+    margin: 40px auto;
+    max-width: 1000px;
+    padding: 0 5%;
+    /* Let the tile menu scroll naturally with the page; remove sticky positioning */
+}
+
+.tile {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 0.5rem;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: background 0.3s, transform 0.3s, color 0.3s;
+    backdrop-filter: blur(6px);
+}
+
+.tile:hover {
+    background: var(--primary-color);
+    color: var(--background-color);
+    transform: translateY(-3px);
+}
+
+/* Details sections container */
+#details-container {
+    padding: 20px 5%;
+    max-width: 900px;
+    margin: 0 auto 80px;
+}
+
+/* Apply the same container spacing to class-based containers on the subpages */
+.details-container {
+    padding: 20px 5%;
+    max-width: 900px;
+    margin: 0 auto 80px;
+}
+
+.detail-section {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 40px;
+    margin-top: 50px;
+    display: none;
+    backdrop-filter: blur(8px);
+    /* Ensure each card has a minimum height so longer text fits comfortably */
+    min-height: 260px;
+}
+
+.detail-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+.detail-section p, .detail-section ul {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.detail-section ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.detail-section.active {
+    display: block;
+}
+
+.detail-section:first-of-type {
+    margin-top: 0;
+}
+
+/* Generic section layout */
+.section {
+    padding: 100px 5% 80px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.about-content p {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Cards layout */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
+.card span {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.card p {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.card ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+    font-size: 0.9rem;
+}
+
+.card ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Contact section */
+.contact-section {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.contact-section .info {
+    flex: 1;
+    min-width: 250px;
+    font-size: 1rem;
+}
+
+.contact-section .info p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.contact-section .info a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.contact-section .info a:hover {
+    text-decoration: underline;
+}
+
+.contact-section .form {
+    flex: 1;
+    min-width: 250px;
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.contact-section button {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    color: var(--background-color);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-section button:hover {
+    background: var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.85rem;
+    color: #888;
+    border-top: 1px solid var(--card-border);
+    margin-top: 60px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(10, 15, 36, 0.95);
+        flex-direction: column;
+        width: 200px;
+        padding: 1rem;
+        gap: 1rem;
+        border: 1px solid var(--card-border);
+        border-top: none;
+    }
+    nav ul.active {
+        display: flex;
+    }
+    nav .menu-toggle {
+        display: block;
+    }
+    .hero-content h1 {
+        font-size: 2.3rem;
+    }
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Landing page: grid of main sections */
+.section-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 5%;
+}
+
+.section-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    height: 260px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+}
+
+.section-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+    filter: grayscale(20%);
+}
+
+/* Highlight the active section on subpages by reducing the grayscale and adding a subtle shadow */
+.section-card.active {
+    filter: grayscale(10%);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Smaller cards for the subpage section menu */
+.subpage-menu {
+    margin-top: 100px;
+}
+
+.subpage-menu .section-card {
+    height: 180px;
+}
+
+/* Hero subtitle styling for the tagline */
+.hero-subtitle {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+.section-card .label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-color);
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-align: center;
+    pointer-events: none;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Sticky selector visible on subpages to navigate between the main sections */
+.section-selector {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 100px;
+    padding: 0 5%;
+    position: sticky;
+    top: 80px;
+    z-index: 600;
+}
+
+.section-selector a {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 0.4rem 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    backdrop-filter: blur(6px);
+    transition: background 0.3s, color 0.3s;
+}
+
+.section-selector a:hover {
+    background: var(--primary-color);
+    color: var(--background-color);
+}
+
+.section-selector a.active {
+    background: var(--primary-color);
+    color: var(--background-color);
+}
