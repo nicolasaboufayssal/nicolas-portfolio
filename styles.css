@@ -1,4 +1,5 @@
 /* Root colour variables for quick customisation */
+
 :root {
     --primary-color: #00adb5;   /* teal accent for highlights */
     --secondary-color: #ac7ef4; /* purple accent for secondary highlights */
@@ -522,8 +523,9 @@ footer {
 @media (max-width: 600px) {
   /* Adjust hero heading and tagline for mobile */
   .hero h1 {
-    font-size: 2.5rem;
+    font-size2.5rem;
     text-align: center;
+      
   }
   .hero h2 {
     font-size: 1rem;
@@ -555,11 +557,32 @@ footer {
     grid-template-columns: 1fr;
   }
   /* Contact form layout adjustments */
-  .contact-section {
+  
+   
+    .contact-section {
     flex-direction: column;
   }
   .contact-section form {
     width: 100%;
     padding: 0;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .section-title {
+    font-size: 1.4rem;
+  }
+  .section-card .label {
+    font-size: 1.1rem;
+    white-space: normal;
   }
 }
