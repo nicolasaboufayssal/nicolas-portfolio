@@ -67,6 +67,8 @@ nav .logo {
 
 nav ul {
     display: flex;
+
+    
     list-style: none;
     gap: 2rem;
 }
@@ -581,8 +583,18 @@ footer {
   .section-title {
     font-size: 1.4rem;
   }
-  .section-card .label {
+ 
+    .section-card .label {
     font-size: 1.1rem;
     white-space: normal;
+
   }
+}
+
+@media (max-width: 600px) {
+    .detail-section h2 {
+        font-size: 1.2rem;
+        line-height: 1.3;
+        word-break: break-word;
+    }
 }
